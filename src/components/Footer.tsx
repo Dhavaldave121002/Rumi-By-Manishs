@@ -11,9 +11,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-foreground text-background pb-safe-bottom">
+    <footer className="bg-background text-foreground pb-safe-bottom border-t border-primary/10">
       {/* Newsletter Section */}
-      <div className="border-b border-background/10">
+      <div className="border-b border-primary/10">
         <div className="container mx-auto px-6 md:px-4 py-10 md:py-12 lg:py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -23,14 +23,14 @@ const Footer = () => {
             className="max-w-2xl mx-auto text-center"
           >
             <h3 className="font-display text-2xl md:text-2xl lg:text-3xl mb-4">Join Our World</h3>
-            <p className="font-body text-background/70 mb-6 md:mb-8 text-sm md:text-sm tracking-wide leading-relaxed">
+            <p className="font-body text-muted-foreground mb-6 md:mb-8 text-sm md:text-sm tracking-wide leading-relaxed">
               Subscribe to receive exclusive offers, early access to new collections, and curated style inspiration.
             </p>
             <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <Input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 bg-transparent border-background/30 text-background placeholder:text-background/50 focus:border-primary rounded-sm text-sm md:text-base h-11 md:h-11 px-4"
+                className="flex-1 bg-transparent border-primary/30 text-foreground placeholder:text-muted-foreground/50 focus:border-primary rounded-sm text-sm md:text-base h-11 md:h-11 px-4"
               />
               <Button variant="hero" className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm md:text-base h-11 md:h-11 px-6">
                 Subscribe
@@ -44,14 +44,14 @@ const Footer = () => {
       <div className="container mx-auto px-6 md:px-4 py-10 md:py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-10 lg:gap-12">
           {/* Brand Column */}
-          <div className="text-center md:text-left pb-6 md:pb-0 border-b md:border-b-0 border-background/10">
+          <div className="text-center md:text-left pb-6 md:pb-0 border-b md:border-b-0 border-primary/10">
             <div className="mb-5 md:mb-6">
               <h2 className="font-display text-2xl md:text-3xl font-medium tracking-wide">RUMI</h2>
-              <p className="font-accent text-sm md:text-sm tracking-[0.3em] text-background/60 mt-1">
+              <p className="font-accent text-sm md:text-sm tracking-[0.3em] text-muted-foreground mt-1">
                 by Manisha
               </p>
             </div>
-            <p className="font-body text-sm md:text-sm text-background/70 leading-relaxed mb-6">
+            <p className="font-body text-sm md:text-sm text-muted-foreground leading-relaxed mb-6">
               Curating timeless elegance through handcrafted ethnic wear. Each piece tells a story of tradition, artistry, and contemporary sophistication.
             </p>
             <div className="flex space-x-4 justify-center md:justify-start">
@@ -64,7 +64,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="w-11 h-11 md:w-10 md:h-10 border border-background/20 rounded-full flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
+                  className="w-11 h-11 md:w-10 md:h-10 border border-primary/20 rounded-full flex items-center justify-center hover:border-primary hover:text-primary transition-colors text-foreground"
                   aria-label={`Social link ${index + 1}`}
                 >
                   <social.icon className="w-5 h-5 md:w-4 md:h-4" />
@@ -74,7 +74,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="text-center md:text-left pb-6 md:pb-0 border-b md:border-b-0 border-background/10">
+          <div className="text-center md:text-left pb-6 md:pb-0 border-b md:border-b-0 border-primary/10">
             <h4 className="font-display text-lg md:text-lg mb-5 md:mb-6">Quick Links</h4>
             <ul className="space-y-3">
               {[
@@ -87,7 +87,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="font-body text-sm md:text-sm text-background/70 hover:text-primary transition-colors inline-block py-1"
+                    className="font-body text-sm md:text-sm text-muted-foreground hover:text-primary transition-colors inline-block py-1"
                   >
                     {link.name}
                   </Link>
@@ -97,7 +97,7 @@ const Footer = () => {
           </div>
 
           {/* Customer Service */}
-          <div className="text-center md:text-left pb-6 md:pb-0 border-b md:border-b-0 border-background/10">
+          <div className="text-center md:text-left pb-6 md:pb-0 border-b md:border-b-0 border-primary/10">
             <h4 className="font-display text-lg md:text-lg mb-5 md:mb-6">Customer Service</h4>
             <ul className="space-y-3">
               {[
@@ -110,7 +110,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="font-body text-sm md:text-sm text-background/70 hover:text-primary transition-colors inline-block py-1"
+                    className="font-body text-sm md:text-sm text-muted-foreground hover:text-primary transition-colors inline-block py-1"
                   >
                     {link.name}
                   </Link>
@@ -125,20 +125,20 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 justify-center md:justify-start">
                 <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                <span className="font-body text-sm md:text-sm text-background/70 text-left leading-relaxed">
+                <span className="font-body text-sm md:text-sm text-muted-foreground text-left leading-relaxed">
                   123 Fashion Street, Mumbai<br />
                   Maharashtra, India 400001
                 </span>
               </li>
               <li className="flex items-center gap-3 justify-center md:justify-start">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="tel:+911234567890" className="font-body text-sm md:text-sm text-background/70 hover:text-primary transition-colors">
+                <a href="tel:+911234567890" className="font-body text-sm md:text-sm text-muted-foreground hover:text-primary transition-colors">
                   +91 123 456 7890
                 </a>
               </li>
               <li className="flex items-center gap-3 justify-center md:justify-start">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="mailto:hello@rumibymanisha.com" className="font-body text-sm md:text-sm text-background/70 hover:text-primary transition-colors break-all">
+                <a href="mailto:hello@rumibymanisha.com" className="font-body text-sm md:text-sm text-muted-foreground hover:text-primary transition-colors break-all">
                   hello@rumibymanisha.com
                 </a>
               </li>
@@ -148,17 +148,17 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-background/10">
+      <div className="border-t border-primary/10">
         <div className="container mx-auto px-6 md:px-4 py-5 md:py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="font-body text-xs md:text-xs text-background/50 text-center md:text-left">
+            <p className="font-body text-xs md:text-xs text-muted-foreground/50 text-center md:text-left">
               © 2024 Rumi by Manisha. All rights reserved.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6">
-              <span className="font-body text-xs md:text-xs text-background/50">We Accept:</span>
+              <span className="font-body text-xs md:text-xs text-muted-foreground/50">We Accept:</span>
               <div className="flex items-center gap-3 flex-wrap justify-center">
                 {["Visa", "Mastercard", "UPI", "PayPal"].map((payment) => (
-                  <span key={payment} className="font-body text-xs md:text-xs text-background/70">
+                  <span key={payment} className="font-body text-xs md:text-xs text-muted-foreground">
                     {payment}
                   </span>
                 ))}

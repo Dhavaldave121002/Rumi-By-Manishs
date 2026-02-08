@@ -67,13 +67,10 @@ const Header = () => {
                 whileHover={{ scale: 1.02 }}
                 className="text-center"
               >
-                <div className="flex flex-col items-center justify-center">
-
-                  <h1 className={`font-display font-medium tracking-wide text-foreground transition-all duration-500 ${isScrolled ? "text-xl md:text-2xl" : "text-3xl md:text-5xl"
-                    }`}>
-                    RUMI
-                  </h1>
-                </div>
+                <h1 className={`font-display font-medium tracking-wide text-foreground transition-all duration-500 ${isScrolled ? "text-2xl md:text-3xl" : "text-3xl md:text-5xl"
+                  }`}>
+                  RUMI
+                </h1>
                 <p className={`font-accent tracking-[0.3em] text-muted-foreground transition-all duration-500 ${isScrolled ? "text-[8px]" : "text-[10px]"
                   } -mt-1`}>
                   by Manisha
@@ -188,16 +185,13 @@ const Header = () => {
             >
               <div className="p-6">
                 <div className="flex justify-between items-center mb-10">
-                  <div className="flex items-center gap-3">
-                    <img src="/logo.svg" alt="RUMI Logo" className="h-8 w-8" />
-                    <div>
-                      <h1 className="font-display text-2xl font-medium tracking-wide text-foreground">
-                        RUMI
-                      </h1>
-                      <p className="font-accent text-[10px] tracking-[0.3em] text-muted-foreground">
-                        by Manisha
-                      </p>
-                    </div>
+                  <div>
+                    <h1 className="font-display text-2xl font-medium tracking-wide text-foreground">
+                      RUMI
+                    </h1>
+                    <p className="font-accent text-[10px] tracking-[0.3em] text-muted-foreground">
+                      by Manisha
+                    </p>
                   </div>
                   <motion.button
                     whileHover={{ scale: 1.1, rotate: 90 }}
