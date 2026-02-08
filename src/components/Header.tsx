@@ -68,7 +68,7 @@ const Header = () => {
                 className="text-center"
               >
                 <div className="flex flex-col items-center justify-center">
-                  <img src="/logo.svg" alt="RUMI Logo" className={`transition-all duration-500 ${isScrolled ? "h-6 w-6 mb-1" : "h-10 w-10 mb-2"}`} />
+
                   <h1 className={`font-display font-medium tracking-wide text-foreground transition-all duration-500 ${isScrolled ? "text-xl md:text-2xl" : "text-3xl md:text-5xl"
                     }`}>
                     RUMI
