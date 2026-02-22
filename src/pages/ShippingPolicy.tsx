@@ -31,9 +31,9 @@ const ShippingPolicy = () => {
   return (
     <>
       <Header />
-      <main className="pt-24 min-h-screen bg-background">
+      <main className="min-h-screen bg-background">
         {/* Hero */}
-        <section className="py-16 bg-secondary/30">
+        <section className="pt-32 md:pt-48 pb-12 md:pb-24 bg-secondary/30 relative overflow-hidden">
           <div className="container mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -87,15 +87,15 @@ const ShippingPolicy = () => {
               <div className="prose prose-neutral max-w-none">
                 <div className="font-body text-muted-foreground space-y-4">
                   <p>
-                    <strong className="text-foreground">Processing Time:</strong> All orders are processed within 1-2 business days. 
+                    <strong className="text-foreground">Processing Time:</strong> All orders are processed within 1-2 business days.
                     Custom orders may take 5-7 additional business days for preparation.
                   </p>
                   <p>
-                    <strong className="text-foreground">Tracking:</strong> Once your order ships, you'll receive a tracking number 
+                    <strong className="text-foreground">Tracking:</strong> Once your order ships, you'll receive a tracking number
                     via email. You can track your package through our website or the carrier's site.
                   </p>
                   <p>
-                    <strong className="text-foreground">Customs & Duties:</strong> International orders may be subject to customs 
+                    <strong className="text-foreground">Customs & Duties:</strong> International orders may be subject to customs
                     duties and taxes. These charges are the responsibility of the recipient and are not included in our prices.
                   </p>
                 </div>
@@ -152,7 +152,7 @@ const ShippingPolicy = () => {
                   <li>Not be intimate apparel or blouses (for hygiene reasons)</li>
                 </ul>
                 <p className="mt-6">
-                  <strong className="text-foreground">Refund Processing:</strong> Once we receive and inspect your return, 
+                  <strong className="text-foreground">Refund Processing:</strong> Once we receive and inspect your return,
                   refunds will be processed within 5-7 business days. The amount will be credited to your original payment method.
                 </p>
               </div>

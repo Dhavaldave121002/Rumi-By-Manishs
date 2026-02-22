@@ -30,8 +30,8 @@ const Wishlist = () => {
   return (
     <>
       <Header />
-      <main className="pt-24 min-h-screen bg-background">
-        <section className="py-16 bg-secondary/30">
+      <main className="min-h-screen bg-background text-foreground">
+        <section className="pt-32 md:pt-48 pb-12 md:pb-24 bg-secondary/30 relative overflow-hidden">
           <div className="container mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -109,7 +109,7 @@ const Wishlist = () => {
                 ))}
               </div>
             ) : (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-16"

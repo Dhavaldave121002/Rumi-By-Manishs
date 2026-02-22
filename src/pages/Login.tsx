@@ -74,28 +74,24 @@ const Login = () => {
   return (
     <>
       <Header />
-      <main className="pt-24 min-h-screen bg-background flex items-center">
-        <div className="container mx-auto px-4 py-8 md:py-16">
-          <div className="max-w-md mx-auto">
+      <main className="min-h-screen bg-background">
+        {/* Page Header / Banner */}
+        <section className="pt-32 md:pt-48 pb-12 md:pb-24 bg-secondary/30 relative overflow-hidden">
+          <div className="container mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-8 md:mb-10"
             >
-              <Link to="/" className="inline-block mb-6 md:mb-8">
-                <h1 className="font-display text-2xl md:text-3xl font-medium tracking-wide text-foreground">
-                  RUMI
-                </h1>
-                <p className="font-accent text-sm md:text-base tracking-[0.3em] text-foreground/90">
-                  by Manisha
-                </p>
-              </Link>
-              <h2 className="font-display text-xl md:text-2xl text-foreground">Welcome Back</h2>
-              <p className="font-body text-sm md:text-base text-muted-foreground mt-2">
-                Sign in to access your account
-              </p>
+              <p className="font-accent text-sm tracking-[0.3em] text-primary mb-4 uppercase">Account</p>
+              <h1 className="font-display text-4xl md:text-5xl text-foreground uppercase">Login & Register</h1>
+              <p className="font-body text-muted-foreground mt-4">Access your personal wardrobe and order history</p>
             </motion.div>
+          </div>
+        </section>
+
+        <div className="container mx-auto px-4 py-12 md:py-24">
+          <div className="max-w-md mx-auto">
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
