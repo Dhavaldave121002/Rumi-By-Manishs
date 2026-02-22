@@ -152,7 +152,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email Us",
-      details: ["hello@rumibymanisha.com", "support@rumibymanisha.com"],
+      details: ["hello@rumibymanisha.com"],
     },
     {
       icon: Clock,
