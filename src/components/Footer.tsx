@@ -79,7 +79,6 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { name: "Shop All", path: "/shop" },
-                { name: "New Arrivals", path: "/shop?category=new" },
                 { name: "About Us", path: "/about" },
                 { name: "Contact", path: "/contact" },
               ].map((link) => (

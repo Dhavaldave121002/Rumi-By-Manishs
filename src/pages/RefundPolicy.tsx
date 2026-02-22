@@ -40,8 +40,8 @@ const RefundPolicy = () => {
                 viewport={{ once: true }}
               >
                 <p>
-                  Kanada Kulture does not accept returns, exchanges, or standard refunds. By placing an order with
-                  Kanada Kulture, you acknowledge and agree that your purchase is final unless one of the narrow
+                  Rumi By Manisha does not accept returns, exchanges, or standard refunds. By placing an order with
+                  Rumi By Manisha, you acknowledge and agree that your purchase is final unless one of the narrow
                   exceptions below applies.
                 </p>
               </motion.div>
@@ -75,7 +75,7 @@ const RefundPolicy = () => {
                 <ul className="list-disc pl-6 space-y-4">
                   <li>
                     To request review for a damaged/defective item, contact us within 1 day of delivery at
-                    <a href="mailto:sales@kanadakulture.com" className="text-primary hover:underline ml-1">sales@kanadakulture.com</a> with:
+                    <a href="mailto:hello@rumibymanisha.com" className="text-primary hover:underline ml-1">hello@rumibymanisha.com</a> with:
                     <ul className="list-circle pl-6 mt-2 space-y-1 text-sm">
                       <li>Your order number</li>
                       <li>Clear photos showing the damage/defect (include at least one photo of the item as received and one of the packaging)</li>
@@ -107,7 +107,7 @@ const RefundPolicy = () => {
                 <p>
                   Because all sales are final, cancellations are not permitted once an order is placed.
                   If you believe your order was placed in error, contact
-                  <a href="mailto:sales@kanadakulture.com" className="text-foreground font-bold hover:underline mx-1">sales@kanadakulture.com</a>
+                  <a href="mailto:hello@rumibymanisha.com" className="text-foreground font-bold hover:underline mx-1">hello@rumibymanisha.com</a>
                   immediately — we may be able to help if the order has not yet been processed, but this is not guaranteed.
                 </p>
               </motion.div>
@@ -130,8 +130,8 @@ const RefundPolicy = () => {
                 viewport={{ once: true }}
               >
                 <h2 className="font-display text-2xl text-foreground mb-4">5. HOW TO CONTACT US</h2>
-                <p className="font-bold text-foreground">Kanada Kulture</p>
-                <p>Email: <a href="mailto:sales@kanadakulture.com" className="text-primary hover:underline">sales@kanadakulture.com</a></p>
+                <p className="font-bold text-foreground">Rumi By Manisha</p>
+                <p>Email: <a href="mailto:hello@rumibymanisha.com" className="text-primary hover:underline">hello@rumibymanisha.com</a></p>
               </motion.div>
             </div>
           </div>

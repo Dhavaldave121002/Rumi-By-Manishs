@@ -7,21 +7,49 @@ interface Banner {
   image: string;
 }
 
-// Banners rearranged to put the most professional "Integrated" ones first
+// Banners optimized for the new professional high-quality images
 const banners: Banner[] = [
-  { id: 1, image: "/banners/img_69861a37516b8.png" }, // Festive Integrated Final
-  { id: 2, image: "/banners/img_698619b87157d.png" }, // Branding Integrated 2
-  { id: 3, image: "/banners/img_6981ca938c037.png" },
-  { id: 4, image: "/banners/img_6981c814db111.png" },
-  { id: 5, image: "/banners/img_6981c3d5ae1f1.png" },
-  { id: 6, image: "/banners/img_6981c4f2ada7f.png" },
-  { id: 7, image: "/banners/img_6981c390b21b8.png" },
-  { id: 8, image: "/banners/img_6981c783bfdfc.png" },
+  { id: 1, image: "/banners/banner1.jpg" },
+  { id: 2, image: "/banners/banner2.jpg" },
+  { id: 3, image: "/banners/banner3.jpg" },
+  { id: 4, image: "/banners/banner4.jpg" },
+  { id: 5, image: "/banners/banner5.jpg" },
 ];
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+
+  // Set this to 'true' as we are using graphic banners with integrated text
+  const isTextInImage = true;
+
+  const bannerText = [
+    {
+      title: "RUMI BY MANISHA",
+      subtitle: "ISHQ IN EVERY THREAD",
+      description: "Discover luxury ethnic wear crafted with love and tradition."
+    },
+    {
+      title: "ROYAL HERITAGE",
+      subtitle: "BRIDAL COLLECTION",
+      description: "Timeless elegance for your most special moments."
+    },
+    {
+      title: "MODERN MINIMALISM",
+      subtitle: "CONTEMPORARY SAREES",
+      description: "Where tradition meets modern sophistication."
+    },
+    {
+      title: "CRAFTED WITH SOUL",
+      subtitle: "HAND-WOVEN LUXURY",
+      description: "Experience the magic of authentic craftsmanship."
+    },
+    {
+      title: "ETHEREAL RADIANCE",
+      subtitle: "FESTIVE EDIT",
+      description: "Shine bright in our latest collection of vibrant silhouettes."
+    }
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -81,7 +109,29 @@ const HeroSection = () => {
               className="w-full h-full bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${banners[currentIndex].image})` }}
             >
-              <div className="absolute inset-0 bg-black/5" />
+              <div className="absolute inset-0 bg-black/10" />
+
+              {/* Luxury Text Overlay - Only shows if isTextInImage is false */}
+              {!isTextInImage && (
+                <div className="absolute inset-0 flex items-center justify-center text-center px-4">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                    className="max-w-4xl"
+                  >
+                    <p className="font-accent text-sm md:text-base tracking-[0.4em] text-white/90 mb-4 uppercase">
+                      {bannerText[currentIndex].subtitle}
+                    </p>
+                    <h2 className="font-display text-4xl md:text-7xl lg:text-8xl text-white mb-6 tracking-tight font-medium">
+                      {bannerText[currentIndex].title}
+                    </h2>
+                    <p className="font-body text-sm md:text-lg text-white/80 max-w-xl mx-auto mb-8">
+                      {bannerText[currentIndex].description}
+                    </p>
+                  </motion.div>
+                </div>
+              )}
             </motion.div>
           </motion.div>
         </AnimatePresence>
