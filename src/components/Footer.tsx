@@ -47,12 +47,12 @@ const Footer = () => {
           <div className="text-center md:text-left pb-6 md:pb-0 border-b md:border-b-0 border-primary/10">
             <div className="mb-5 md:mb-6">
               <h2 className="font-display text-2xl md:text-3xl font-medium tracking-wide">RUMI</h2>
-              <p className="font-accent text-sm md:text-sm tracking-[0.3em] text-muted-foreground mt-1">
+              <p className="font-accent text-sm tracking-[0.3em] text-foreground/90 -mt-1">
                 by Manisha
               </p>
             </div>
-            <p className="font-body text-sm md:text-sm text-muted-foreground leading-relaxed mb-6">
-              Curating timeless elegance through handcrafted ethnic wear. Each piece tells a story of tradition, artistry, and contemporary sophistication.
+            <p className="font-body text-sm md:text-sm text-muted-foreground leading-relaxed mb-6 italic">
+              "We weave Ishq in Every Thread, love that transforms moments into memories. Where Noor Lights, Ishq Inspires, and Rooh Delights."
             </p>
             <div className="flex space-x-4 justify-center md:justify-start">
               {[
@@ -79,7 +79,6 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { name: "Shop All", path: "/shop" },
-                { name: "Gallery", path: "/gallery" },
                 { name: "New Arrivals", path: "/shop?category=new" },
                 { name: "About Us", path: "/about" },
                 { name: "Contact", path: "/contact" },
@@ -101,11 +100,7 @@ const Footer = () => {
             <h4 className="font-display text-lg md:text-lg mb-5 md:mb-6">Customer Service</h4>
             <ul className="space-y-3">
               {[
-                { name: "FAQ", path: "/faq" },
-                { name: "Shipping Policy", path: "/shipping-policy" },
-                { name: "Returns & Exchanges", path: "/shipping-policy" },
-                { name: "Terms & Conditions", path: "/terms" },
-                { name: "Privacy Policy", path: "/privacy" },
+                { name: "Refund Policy", path: "/refund-policy" },
               ].map((link) => (
                 <li key={link.name}>
                   <Link
@@ -123,17 +118,10 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <h4 className="font-display text-lg md:text-lg mb-5 md:mb-6">Contact Us</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 justify-center md:justify-start">
-                <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                <span className="font-body text-sm md:text-sm text-muted-foreground text-left leading-relaxed">
-                  123 Fashion Street, Mumbai<br />
-                  Maharashtra, India 400001
-                </span>
-              </li>
               <li className="flex items-center gap-3 justify-center md:justify-start">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="tel:+911234567890" className="font-body text-sm md:text-sm text-muted-foreground hover:text-primary transition-colors">
-                  +91 123 456 7890
+                <a href="tel:+16474102840" className="font-body text-sm md:text-sm text-muted-foreground hover:text-primary transition-colors">
+                  +1 (647) 410-2840
                 </a>
               </li>
               <li className="flex items-center gap-3 justify-center md:justify-start">
@@ -152,18 +140,11 @@ const Footer = () => {
         <div className="container mx-auto px-6 md:px-4 py-5 md:py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-body text-xs md:text-xs text-muted-foreground/50 text-center md:text-left">
-              © 2024 Rumi by Manisha. All rights reserved.
+              © {new Date().getFullYear()} RUMI by Manisha. All rights reserved.
             </p>
-            <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6">
-              <span className="font-body text-xs md:text-xs text-muted-foreground/50">We Accept:</span>
-              <div className="flex items-center gap-3 flex-wrap justify-center">
-                {["Visa", "Mastercard", "UPI", "PayPal"].map((payment) => (
-                  <span key={payment} className="font-body text-xs md:text-xs text-muted-foreground">
-                    {payment}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <p className="font-body text-[10px] md:text-xs text-muted-foreground/40 text-center md:text-right tracking-widest uppercase">
+              Exclusively Developed by <span className="text-primary/60 font-medium">Vertex Global Tech</span>
+            </p>
           </div>
         </div>
       </div>

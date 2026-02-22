@@ -27,11 +27,11 @@ const Header = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Shop", path: "/shop" },
-    { name: "Gallery", path: "/gallery" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
-    { name: "FAQ", path: "/faq" },
   ];
+
+  const isHomePage = location.pathname === "/";
 
   return (
     <>
@@ -39,9 +39,9 @@ const Header = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 bg-background/95 backdrop-blur-md border-b border-primary/10 ${isScrolled
-          ? "shadow-soft py-2"
-          : "py-4 md:py-6"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled || !isHomePage
+          ? "bg-background/95 backdrop-blur-md border-b border-primary/10 shadow-soft py-2"
+          : "bg-transparent py-4 md:py-8"
           }`}
       >
         <div className="container mx-auto px-4 md:px-8">
@@ -50,7 +50,8 @@ const Header = () => {
             {/* Left: Mobile Menu Button (md:hidden) / Empty space for balancing on desktop */}
             <div className="flex-1 md:hidden">
               <button
-                className="p-2.5 text-foreground hover:text-primary transition-colors"
+                className={`p-2.5 transition-colors ${isScrolled || !isHomePage ? "text-foreground" : "text-white"
+                  } hover:text-primary transition-colors`}
                 onClick={() => setIsMobileMenuOpen(true)}
                 aria-label="Open menu"
               >
@@ -67,11 +68,15 @@ const Header = () => {
                 whileHover={{ scale: 1.02 }}
                 className="text-center"
               >
-                <h1 className={`font-display font-medium tracking-wide text-foreground transition-all duration-500 ${isScrolled ? "text-2xl md:text-3xl" : "text-3xl md:text-5xl"
+                <h1 className={`font-display font-medium tracking-wide transition-all duration-500 ${isScrolled || !isHomePage
+                  ? "text-2xl md:text-3xl text-foreground"
+                  : "text-3xl md:text-5xl text-white"
                   }`}>
                   RUMI
                 </h1>
-                <p className={`font-accent tracking-[0.3em] text-muted-foreground transition-all duration-500 ${isScrolled ? "text-[8px]" : "text-[10px]"
+                <p className={`font-accent tracking-[0.3em] transition-all duration-500 ${isScrolled || !isHomePage
+                  ? "text-[11px] text-foreground/80"
+                  : "text-[13px] text-white/90"
                   } -mt-1`}>
                   by Manisha
                 </p>
@@ -84,7 +89,8 @@ const Header = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setIsSearchOpen(true)}
-                className="p-2.5 text-foreground hover:text-primary transition-colors duration-300"
+                className={`p-2.5 transition-colors duration-300 ${isScrolled || !isHomePage ? "text-foreground" : "text-white"
+                  } hover:text-primary`}
                 aria-label="Search"
               >
                 <Search className="w-6 h-6" />
@@ -92,7 +98,8 @@ const Header = () => {
 
               <Link
                 to="/wishlist"
-                className="p-2.5 text-foreground hover:text-primary transition-colors duration-300 relative"
+                className={`p-2.5 transition-colors duration-300 relative ${isScrolled || !isHomePage ? "text-foreground" : "text-white"
+                  } hover:text-primary`}
                 aria-label="Wishlist"
               >
                 <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
@@ -112,14 +119,16 @@ const Header = () => {
               {isAuthenticated ? (
                 <Link
                   to="/profile"
-                  className="flex items-center gap-2 p-2.5 text-foreground hover:text-primary transition-colors duration-300"
+                  className={`flex items-center gap-2 p-2.5 transition-colors duration-300 ${isScrolled || !isHomePage ? "text-foreground" : "text-white"
+                    } hover:text-primary`}
                   aria-label="Profile"
                 >
                   <motion.div
                     whileHover={{ scale: 1.1 }}
-                    className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20"
+                    className={`w-8 h-8 rounded-full flex items-center justify-center border ${isScrolled || !isHomePage ? "bg-primary/10 border-primary/20" : "bg-white/10 border-white/20"
+                      }`}
                   >
-                    <span className="font-body text-sm text-primary font-medium">
+                    <span className={`font-body text-sm font-medium ${isScrolled || !isHomePage ? "text-primary" : "text-white"}`}>
                       {user?.name?.charAt(0).toUpperCase()}
                     </span>
                   </motion.div>
@@ -127,7 +136,8 @@ const Header = () => {
               ) : (
                 <Link
                   to="/login"
-                  className="p-2.5 text-foreground hover:text-primary transition-colors duration-300"
+                  className={`p-2.5 transition-colors duration-300 ${isScrolled || !isHomePage ? "text-foreground" : "text-white"
+                    } hover:text-primary`}
                   aria-label="Account"
                 >
                   <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
@@ -139,15 +149,15 @@ const Header = () => {
           </div>
 
           {/* Row 2: Desktop Navigation (Center aligned) */}
-          <nav className={`hidden md:flex items-center justify-center space-x-12 overflow-hidden transition-all duration-500 ${isScrolled ? "max-h-16 opacity-100 mt-2 py-1" : "max-h-24 opacity-100 mt-8"
+          <nav className={`hidden md:flex items-center justify-center space-x-12 overflow-hidden transition-all duration-500 ${isScrolled || !isHomePage ? "max-h-16 opacity-100 mt-2 py-1" : "max-h-24 opacity-100 mt-8"
             }`}>
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`relative font-body font-medium tracking-[0.2em] uppercase transition-all duration-500 ${isScrolled ? "text-[11px]" : "text-[14px]"} ${location.pathname === link.path
+                className={`relative font-body font-medium tracking-[0.2em] uppercase transition-all duration-500 ${isScrolled || !isHomePage ? "text-[11px]" : "text-[14px]"} ${location.pathname === link.path
                   ? "text-primary"
-                  : "text-foreground hover:text-primary"
+                  : isScrolled || !isHomePage ? "text-foreground hover:text-primary" : "text-white hover:text-primary"
                   }`}
               >
                 <motion.span whileHover={{ y: -2 }} className="inline-block">

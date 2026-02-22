@@ -36,25 +36,17 @@ const BrandStory = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <p className="font-accent text-sm tracking-[0.3em] text-primary mb-4">OUR STORY</p>
-            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-8 leading-tight">
-              Crafting Dreams,
+            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-8 leading-tight uppercase">
+              Ishq in every
               <br />
-              <span className="italic">One Thread at a Time</span>
+              <span className="italic">thread</span>
             </h2>
-            <div className="space-y-6 text-muted-foreground font-body leading-relaxed">
+            <div className="space-y-6 text-muted-foreground font-body leading-relaxed text-lg italic">
               <p>
-                Born from a passion for preserving India's rich textile heritage, Rumi by Manisha 
-                brings together centuries-old craftsmanship with contemporary design sensibilities.
+                "What began in the heart of my home in Mississauga has grown into a space where every woman is celebrated. At RUMI, we weave Ishq in Every Thread, love that transforms moments into memories."
               </p>
-              <p>
-                Each piece in our collection is meticulously handcrafted by skilled artisans, 
-                ensuring that the traditions passed down through generations continue to thrive 
-                in the modern world.
-              </p>
-              <p>
-                From the vibrant streets of Jaipur to the silk looms of Varanasi, we source 
-                only the finest materials to create garments that tell stories of culture, 
-                artistry, and timeless beauty.
+              <p className="text-base not-italic">
+                From personalized styling to perfect alterations, we ensure you truly love the outfit you choose. RUMI – Where Noor Lights, Ishq Inspires, and Rooh Delights.
               </p>
             </div>
             <div className="mt-10">

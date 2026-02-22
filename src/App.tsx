@@ -12,16 +12,12 @@ import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import FAQ from "./pages/FAQ";
-import ShippingPolicy from "./pages/ShippingPolicy";
-import Terms from "./pages/Terms";
-import Privacy from "./pages/Privacy";
+import RefundPolicy from "./pages/RefundPolicy";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import Wishlist from "./pages/Wishlist";
-import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
@@ -32,7 +28,6 @@ import InquiriesManagement from "./pages/admin/InquiriesManagement";
 import OrdersManagement from "./pages/admin/OrdersManagement";
 import UsersManagement from "./pages/admin/UsersManagement";
 import CollectionsManagement from "./pages/admin/CollectionsManagement";
-import GalleryManagement from "./pages/admin/GalleryManagement";
 import FAQManagement from "./pages/admin/FAQManagement";
 import BackToTop from "./components/BackToTop";
 import FloatingContactButton from "./components/FloatingContactButton";
@@ -57,11 +52,7 @@ const App = () => (
                   <Route path="/product/:id" element={<ProductDetail />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/contact" element={<Contact />} />
-                  <Route path="/faq" element={<FAQ />} />
-                  <Route path="/gallery" element={<Gallery />} />
-                  <Route path="/shipping-policy" element={<ShippingPolicy />} />
-                  <Route path="/terms" element={<Terms />} />
-                  <Route path="/privacy" element={<Privacy />} />
+                  <Route path="/refund-policy" element={<RefundPolicy />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -79,7 +70,6 @@ const App = () => (
                   <Route path="/admin/orders" element={<OrdersManagement />} />
                   <Route path="/admin/users" element={<UsersManagement />} />
                   <Route path="/admin/collections" element={<CollectionsManagement />} />
-                  <Route path="/admin/gallery" element={<GalleryManagement />} />
                   <Route path="/admin/faqs" element={<FAQManagement />} />
 
                   <Route path="*" element={<NotFound />} />

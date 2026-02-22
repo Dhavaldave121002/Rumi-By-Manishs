@@ -26,7 +26,6 @@ const menuItems: MenuItem[] = [
     { icon: LayoutDashboard, label: "Dashboard", path: "/admin/dashboard" },
     { icon: Package, label: "Products", path: "/admin/products" },
     { icon: Layers, label: "Collections", path: "/admin/collections" },
-    { icon: Image, label: "Gallery", path: "/admin/gallery" },
     { icon: Users, label: "Users", path: "/admin/users" },
     { icon: Star, label: "Reviews", path: "/admin/reviews" },
     { icon: MessageSquare, label: "Inquiries", path: "/admin/inquiries" },

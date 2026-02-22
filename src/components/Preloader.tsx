@@ -151,7 +151,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                     transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
                     className="w-16 md:w-24 h-[1px] bg-primary/50 mx-auto mb-3 md:mb-4"
                   />
-                  <p className="font-accent text-base md:text-lg lg:text-xl tracking-[0.25em] md:tracking-[0.3em] text-muted-foreground">
+                  <p className="font-accent text-lg md:text-xl lg:text-2xl tracking-[0.25em] md:tracking-[0.3em] text-foreground/90">
                     by Manisha
                   </p>
                 </motion.div>
@@ -173,7 +173,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                     animate={{ width: `${progress}%` }}
                     transition={{ duration: 0.2, ease: "easeOut" }}
                   />
-                  
+
                   {/* Shimmer Effect */}
                   <motion.div
                     animate={{ x: ["-100%", "200%"] }}
@@ -226,7 +226,7 @@ const Preloader = ({ onComplete }: { onComplete: () => void }) => {
                 transition={{ duration: 0.5 }}
                 className="font-accent text-[10px] md:text-xs tracking-[0.15em] md:tracking-[0.2em] text-muted-foreground/70 mt-8 md:mt-12"
               >
-                TIMELESS ELEGANCE • HANDCRAFTED HERITAGE
+                WHERE NOOR LIGHTS • ISHQ INSPIRES • ROOH DELIGHTS
               </motion.p>
             </motion.div>
           )}

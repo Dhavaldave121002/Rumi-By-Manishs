@@ -241,7 +241,7 @@ const Shop = () => {
       <Header />
       <main className="pt-20 md:pt-24 min-h-screen bg-background">
         {/* Page Header */}
-        <section className="py-8 md:py-16 bg-secondary/30">
+        <section className="py-16 md:py-32 bg-secondary/30">
           <div className="container mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -256,7 +256,7 @@ const Shop = () => {
               >
                 {collectionName ? "COLLECTION" : "SHOP"}
               </motion.p>
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-3 md:mb-4 capitalize">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-7xl text-foreground mb-4 md:mb-6 tracking-tight capitalize">
                 {collectionName ? collectionName.replace(/-/g, ' ') : "Our Shop"}
               </h1>
               <p className="font-body text-sm md:text-base text-muted-foreground max-w-lg mx-auto">

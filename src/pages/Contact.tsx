@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Mail, Phone, MapPin, Clock, Send, Loader2 } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, Loader2, ChevronDown, HelpCircle, Sparkles, Package, RefreshCw, CreditCard, Search } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 import { z } from "zod";
 import { api } from "@/lib/api";
@@ -37,6 +38,39 @@ const Contact = () => {
     preferredDate: "",
     preferredTime: "",
   });
+
+  const [faqData, setFaqData] = useState<any[]>([]);
+  const [faqsLoading, setFaqsLoading] = useState(true);
+  const [openFaqItems, setOpenFaqItems] = useState<{ [key: string]: boolean }>({});
+
+  useEffect(() => {
+    const fetchFAQs = async () => {
+      try {
+        const res = await api.faqs.getGrouped();
+        if (res.success) {
+          const groupedData = Object.entries(res.data).map(([category, questions]) => {
+            return {
+              category,
+              questions: (questions as any[]).map(q => ({
+                q: q.question,
+                a: q.answer
+              }))
+            };
+          });
+          setFaqData(groupedData);
+        }
+      } catch (error) {
+        console.error("Error fetching FAQs:", error);
+      } finally {
+        setFaqsLoading(false);
+      }
+    };
+    fetchFAQs();
+  }, []);
+
+  const toggleFaq = (key: string) => {
+    setOpenFaqItems((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -111,14 +145,9 @@ const Contact = () => {
 
   const contactInfo = [
     {
-      icon: MapPin,
-      title: "Visit Our Boutique",
-      details: ["123 Fashion Street, Linking Road", "Mumbai, Maharashtra 400001", "India"],
-    },
-    {
       icon: Phone,
       title: "Call Us Anytime",
-      details: ["+91 123 456 7890", "+1 (416) 555-0123 (Canada)"],
+      details: ["+1 (647) 410-2840"],
     },
     {
       icon: Mail,
@@ -128,7 +157,7 @@ const Contact = () => {
     {
       icon: Clock,
       title: "Working Hours",
-      details: ["Monday - Saturday: 10AM - 8PM IST", "Sunday: 12PM - 6PM IST"],
+      details: ["Monday - Sunday: 11AM - 9PM"],
     },
   ];
 
@@ -164,7 +193,7 @@ const Contact = () => {
       <Header />
       <main className="pt-24 min-h-screen bg-background">
         {/* Hero */}
-        <section className="py-12 md:py-16 bg-secondary/30">
+        <section className="py-20 md:py-32 bg-secondary/30 relative overflow-hidden">
           <div className="container mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -172,7 +201,7 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
             >
               <p className="font-accent text-sm tracking-[0.3em] text-primary mb-4">GET IN TOUCH</p>
-              <h1 className="font-display text-3xl md:text-5xl text-foreground mb-4">Contact Us</h1>
+              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground mb-6 tracking-tight">Contact Us</h1>
               <p className="font-body text-sm md:text-base text-muted-foreground max-w-lg mx-auto">
                 We'd love to hear from you. Reach out for personalized styling advice, custom orders,
                 bridal consultations, or any inquiries about our exclusive ethnic wear collections.
@@ -240,7 +269,7 @@ const Contact = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         className={`bg-transparent ${errors.phone ? "border-destructive" : ""}`}
-                        placeholder="+91 123 456 7890"
+                        placeholder="+1 (647) 410-2840"
                       />
                       {errors.phone && (
                         <p className="text-xs text-destructive mt-1">{errors.phone}</p>
@@ -400,16 +429,82 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Map Section */}
-        <section className="h-64 md:h-96 bg-secondary/50 relative overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center px-4">
-              <MapPin className="w-10 h-10 md:w-12 md:h-12 text-primary mx-auto mb-4" />
-              <p className="font-display text-lg md:text-xl text-foreground mb-2">Visit Our Flagship Boutique</p>
-              <p className="font-body text-sm md:text-base text-muted-foreground">123 Fashion Street, Linking Road, Mumbai</p>
-            </div>
+        {/* FAQ Section */}
+        <section id="faq" className="py-12 md:py-24 bg-secondary/30">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12 md:mb-16"
+            >
+              <p className="font-accent text-sm tracking-[0.3em] text-primary mb-4 uppercase">Answers</p>
+              <h2 className="font-display text-3xl md:text-5xl text-foreground mb-4">Frequently Asked Questions</h2>
+              <p className="font-body text-muted-foreground max-w-2xl mx-auto">
+                Find quick answers to common questions about our services, process, and collections.
+              </p>
+            </motion.div>
+
+            {faqsLoading ? (
+              <div className="flex justify-center py-12">
+                <Loader2 className="w-8 h-8 text-primary animate-spin" />
+              </div>
+            ) : (
+              <div className="space-y-12">
+                {faqData.map((category, catIdx) => (
+                  <div key={category.category} className="space-y-4">
+                    <h3 className="font-display text-xl md:text-2xl text-foreground border-b border-primary/20 pb-4 mb-6">
+                      {category.category}
+                    </h3>
+                    <div className="grid gap-4">
+                      {category.questions.map((item: any, qIdx: number) => {
+                        const key = `${catIdx}-${qIdx}`;
+                        const isOpen = openFaqItems[key];
+                        return (
+                          <motion.div
+                            key={key}
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="bg-background border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all"
+                          >
+                            <button
+                              onClick={() => toggleFaq(key)}
+                              className="w-full flex items-center justify-between p-5 text-left"
+                            >
+                              <span className="font-body font-bold text-foreground pr-4">{item.q}</span>
+                              <ChevronDown className={`w-5 h-5 text-primary transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+                            </button>
+                            <AnimatePresence>
+                              {isOpen && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  className="overflow-hidden"
+                                >
+                                  <div className="px-5 pb-5">
+                                    <div className="p-4 bg-secondary/30 rounded-lg border-l-4 border-primary">
+                                      <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed">
+                                        {item.a}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
+
       </main>
       <Footer />
       <BackToTop />

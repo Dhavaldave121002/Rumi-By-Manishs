@@ -32,8 +32,8 @@ const Privacy = () => {
               >
                 <h2 className="font-display text-2xl text-foreground mb-4">1. Introduction</h2>
                 <p>
-                  At Rumi by Manisha, we are committed to protecting your privacy. This Privacy Policy 
-                  explains how we collect, use, disclose, and safeguard your information when you visit 
+                  At Rumi by Manisha, we are committed to protecting your privacy. This Privacy Policy
+                  explains how we collect, use, disclose, and safeguard your information when you visit
                   our website or make a purchase.
                 </p>
               </motion.div>
@@ -109,8 +109,8 @@ const Privacy = () => {
               >
                 <h2 className="font-display text-2xl text-foreground mb-4">6. Data Security</h2>
                 <p>
-                  We implement industry-standard security measures to protect your information. All payment 
-                  transactions are encrypted using SSL technology. However, no method of transmission over 
+                  We implement industry-standard security measures to protect your information. All payment
+                  transactions are encrypted using SSL technology. However, no method of transmission over
                   the Internet is 100% secure, and we cannot guarantee absolute security.
                 </p>
               </motion.div>
@@ -138,8 +138,8 @@ const Privacy = () => {
               >
                 <h2 className="font-display text-2xl text-foreground mb-4">8. Cookies</h2>
                 <p>
-                  We use cookies and similar technologies to enhance your browsing experience, analyze 
-                  site traffic, and personalize content. You can control cookie settings through your 
+                  We use cookies and similar technologies to enhance your browsing experience, analyze
+                  site traffic, and personalize content. You can control cookie settings through your
                   browser preferences.
                 </p>
               </motion.div>
@@ -151,8 +151,8 @@ const Privacy = () => {
               >
                 <h2 className="font-display text-2xl text-foreground mb-4">9. Children's Privacy</h2>
                 <p>
-                  Our website is not intended for children under 13. We do not knowingly collect personal 
-                  information from children. If you believe a child has provided us with their information, 
+                  Our website is not intended for children under 13. We do not knowingly collect personal
+                  information from children. If you believe a child has provided us with their information,
                   please contact us immediately.
                 </p>
               </motion.div>
@@ -168,8 +168,7 @@ const Privacy = () => {
                 </p>
                 <p className="mt-4">
                   <strong className="text-foreground">Email:</strong> privacy@rumibymanisha.com<br />
-                  <strong className="text-foreground">Phone:</strong> +91 123 456 7890<br />
-                  <strong className="text-foreground">Address:</strong> 123 Fashion Street, Mumbai, Maharashtra 400001, India
+                  <strong className="text-foreground">Phone:</strong> +1 (647) 410-2840
                 </p>
               </motion.div>
             </div>

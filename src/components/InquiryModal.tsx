@@ -300,7 +300,7 @@ const InquiryModal = ({ isOpen, onClose, product, currency = "CAD" }: InquiryMod
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            placeholder="+1 234 567 8900"
+                            placeholder="+1 (647) 410-2840"
                             className={`pl-10 ${errors.phone ? "border-destructive" : ""}`}
                           />
                         </div>

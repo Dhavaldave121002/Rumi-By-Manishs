@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const images = [
-  "https://images.unsplash.com/photo-1583391733956-6c78276477e2?w=400&q=80",
+  "https://images.unsplash.com/photo-1544441893-675973e31985?w=400&q=80",
   "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=80",
   "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&q=80",
   "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&q=80",
@@ -21,7 +23,15 @@ const InstagramFeed = () => {
           className="text-center mb-12"
         >
           <p className="font-accent text-sm tracking-[0.3em] text-primary mb-4">FOLLOW US</p>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">@rumibymanisha</h2>
+          <motion.a
+            href="https://instagram.com/rumibymanisha"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            className="inline-block"
+          >
+            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4 hover:text-primary transition-colors">@rumibymanisha</h2>
+          </motion.a>
           <p className="font-body text-muted-foreground">Join our community for daily inspiration</p>
         </motion.div>
 
@@ -29,7 +39,7 @@ const InstagramFeed = () => {
           {images.map((image, index) => (
             <motion.a
               key={index}
-              href="https://instagram.com"
+              href="https://instagram.com/rumibymanisha"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.9 }}

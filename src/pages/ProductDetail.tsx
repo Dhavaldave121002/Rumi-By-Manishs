@@ -58,18 +58,22 @@ const ProductDetail = () => {
           // Map DB product to UI format
           const mappedProduct = {
             ...dbProduct,
-            image: dbProduct.images?.[0]?.image_url || "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80",
+            id: String(dbProduct.id),
+            image: dbProduct.images?.[0]?.image_url || dbProduct.primary_image || "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80",
             images: dbProduct.images && dbProduct.images.length > 0
               ? dbProduct.images.map((img: any) => img.image_url)
               : [dbProduct.primary_image || "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80"],
             category: dbProduct.category_name || "Sarees",
-            priceINR: dbProduct.price * 60, // Fallback conversion
+            price: Number(dbProduct.price),
+            priceINR: Number(dbProduct.price) * 60, // Fallback conversion
             details: dbProduct.description ? [dbProduct.description] : [],
-            sizes: ["M", "L", "XL"], // Default sizes if not in DB
-            colors: [{ name: "Default", hex: "#000000" }], // Default color
+            sizes: dbProduct.sizes ? (typeof dbProduct.sizes === 'string' ? dbProduct.sizes.split(',') : dbProduct.sizes) : ["M", "L", "XL"],
+            colors: dbProduct.colors ? (typeof dbProduct.colors === 'string' ? JSON.parse(dbProduct.colors) : dbProduct.colors) : [{ name: "Default", hex: "#000000" }],
             careInstructions: dbProduct.care_instructions ? [dbProduct.care_instructions] : ["Hand wash only"],
-            inStock: dbProduct.stock_quantity > 0,
-            quantity: dbProduct.stock_quantity,
+            inStock: Number(dbProduct.stock_quantity) > 0,
+            quantity: Number(dbProduct.stock_quantity),
+            rating: Number(dbProduct.rating) || 5.0,
+            reviews: Number(dbProduct.reviews_count) || 0,
           };
 
           setProduct(mappedProduct);
@@ -648,7 +652,7 @@ const ProductDetail = () => {
           size: selectedSize,
           color: selectedColor.name,
           quantity,
-        } : { id: 0, name: '', price: 0, priceINR: 0, image: '', category: '', size: '', color: '', quantity: 0 }}
+        } : { id: '0', name: '', price: 0, priceINR: 0, image: '', category: '', size: '', color: '', quantity: 0 }}
         currency={currency}
       />
     </>

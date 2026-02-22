@@ -141,6 +141,9 @@ export const api = {
         search: (query: string) =>
             apiFetch<any>(API_CONFIG.ENDPOINTS.PRODUCTS, undefined, { search: query }),
 
+        getRelated: (productId: number, categoryId: number, limit: number = 4) =>
+            apiFetch<any>(API_CONFIG.ENDPOINTS.PRODUCTS, undefined, { related: productId, category: categoryId, limit }),
+
         create: (data: any) =>
             apiFetch<any>(API_CONFIG.ENDPOINTS.PRODUCTS, { method: 'POST', body: JSON.stringify(data) }),
 

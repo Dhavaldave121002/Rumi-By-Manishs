@@ -32,7 +32,7 @@ const Terms = () => {
               >
                 <h2 className="font-display text-2xl text-foreground mb-4">1. Introduction</h2>
                 <p>
-                  Welcome to Rumi by Manisha. By accessing and using our website and services, you agree 
+                  Welcome to Rumi by Manisha. By accessing and using our website and services, you agree
                   to be bound by these Terms and Conditions. Please read them carefully before making a purchase.
                 </p>
               </motion.div>
@@ -59,12 +59,12 @@ const Terms = () => {
               >
                 <h2 className="font-display text-2xl text-foreground mb-4">3. Products & Pricing</h2>
                 <p className="mb-4">
-                  All products are subject to availability. We reserve the right to limit quantities or 
-                  discontinue products without notice. Prices are displayed in the currency appropriate 
+                  All products are subject to availability. We reserve the right to limit quantities or
+                  discontinue products without notice. Prices are displayed in the currency appropriate
                   to your location (INR for India, CAD for Canada/International).
                 </p>
                 <p>
-                  While we strive for accuracy, colors may appear slightly different due to monitor settings. 
+                  While we strive for accuracy, colors may appear slightly different due to monitor settings.
                   Product descriptions are for informational purposes and do not constitute a warranty.
                 </p>
               </motion.div>
@@ -76,11 +76,11 @@ const Terms = () => {
               >
                 <h2 className="font-display text-2xl text-foreground mb-4">4. Orders & Payment</h2>
                 <p className="mb-4">
-                  By placing an order, you are making an offer to purchase. We reserve the right to 
+                  By placing an order, you are making an offer to purchase. We reserve the right to
                   accept or decline any order. Payment must be made at the time of order placement.
                 </p>
                 <p>
-                  We accept major credit cards, PayPal, UPI, Net Banking, and EMI options. All transactions 
+                  We accept major credit cards, PayPal, UPI, Net Banking, and EMI options. All transactions
                   are secured with industry-standard encryption.
                 </p>
               </motion.div>
@@ -92,8 +92,8 @@ const Terms = () => {
               >
                 <h2 className="font-display text-2xl text-foreground mb-4">5. Shipping & Delivery</h2>
                 <p>
-                  Shipping times are estimates and not guaranteed. We are not responsible for delays 
-                  caused by carriers, customs, or circumstances beyond our control. Risk of loss passes 
+                  Shipping times are estimates and not guaranteed. We are not responsible for delays
+                  caused by carriers, customs, or circumstances beyond our control. Risk of loss passes
                   to you upon delivery to the carrier.
                 </p>
               </motion.div>
@@ -105,8 +105,8 @@ const Terms = () => {
               >
                 <h2 className="font-display text-2xl text-foreground mb-4">6. Returns & Refunds</h2>
                 <p>
-                  Our return policy is outlined in our Shipping Policy page. Refunds will be processed 
-                  within 5-7 business days after we receive and inspect returned items. Custom orders 
+                  Our return policy is outlined in our Shipping Policy page. Refunds will be processed
+                  within 5-7 business days after we receive and inspect returned items. Custom orders
                   and sale items may have different return conditions.
                 </p>
               </motion.div>
@@ -118,7 +118,7 @@ const Terms = () => {
               >
                 <h2 className="font-display text-2xl text-foreground mb-4">7. Intellectual Property</h2>
                 <p>
-                  All content on this website, including images, text, designs, and logos, is the property 
+                  All content on this website, including images, text, designs, and logos, is the property
                   of Rumi by Manisha and is protected by copyright laws. Unauthorized use is prohibited.
                 </p>
               </motion.div>
@@ -130,8 +130,8 @@ const Terms = () => {
               >
                 <h2 className="font-display text-2xl text-foreground mb-4">8. Limitation of Liability</h2>
                 <p>
-                  To the fullest extent permitted by law, Rumi by Manisha shall not be liable for any 
-                  indirect, incidental, special, or consequential damages arising from your use of our 
+                  To the fullest extent permitted by law, Rumi by Manisha shall not be liable for any
+                  indirect, incidental, special, or consequential damages arising from your use of our
                   website or products.
                 </p>
               </motion.div>
@@ -143,7 +143,7 @@ const Terms = () => {
               >
                 <h2 className="font-display text-2xl text-foreground mb-4">9. Governing Law</h2>
                 <p>
-                  These terms shall be governed by the laws of India. Any disputes shall be subject to 
+                  These terms shall be governed by the laws of India. Any disputes shall be subject to
                   the exclusive jurisdiction of the courts in Mumbai, Maharashtra.
                 </p>
               </motion.div>
@@ -155,8 +155,8 @@ const Terms = () => {
               >
                 <h2 className="font-display text-2xl text-foreground mb-4">10. Contact</h2>
                 <p>
-                  For questions about these Terms & Conditions, please contact us at 
-                  legal@rumibymanisha.com or call +91 123 456 7890.
+                  For questions about these Terms & Conditions, please contact us at
+                  legal@rumibymanisha.com or call +1 (647) 410-2840.
                 </p>
               </motion.div>
             </div>

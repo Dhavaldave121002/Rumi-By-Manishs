@@ -114,7 +114,7 @@ const ResetPassword = () => {
                 <h1 className="font-display text-2xl md:text-3xl font-medium tracking-wide text-foreground">
                   RUMI
                 </h1>
-                <p className="font-accent text-xs md:text-sm tracking-[0.3em] text-muted-foreground">
+                <p className="font-accent text-sm md:text-base tracking-[0.3em] text-foreground/90">
                   by Manisha
                 </p>
               </Link>

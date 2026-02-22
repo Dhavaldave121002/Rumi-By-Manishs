@@ -5,19 +5,28 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const About = () => {
-  const milestones = [
-    { year: "2015", title: "The Beginning", description: "Founded with a vision to preserve traditional Indian textiles" },
-    { year: "2017", title: "First Boutique", description: "Opened our flagship store in Mumbai" },
-    { year: "2019", title: "Going Global", description: "Expanded to international shipping across 30+ countries" },
-    { year: "2022", title: "Artisan Network", description: "Partnered with over 500 skilled artisans across India" },
-    { year: "2024", title: "Digital Evolution", description: "Launched our enhanced online shopping experience" },
-  ];
 
   const values = [
-    { title: "Craftsmanship", description: "Every piece is handcrafted by skilled artisans using traditional techniques" },
-    { title: "Sustainability", description: "We use eco-friendly materials and support ethical production practices" },
-    { title: "Heritage", description: "Preserving India's rich textile traditions for future generations" },
-    { title: "Quality", description: "Only the finest fabrics and materials make it into our collections" },
+    {
+      title: "Ishq",
+      subtitle: "Love in Every Thread",
+      description: "At RUMI, everything begins with love. Love for our craft, love for our culture, and love for every client who trusts us with their special moments. Every piece is chosen, styled, and tailored with genuine care and intention."
+    },
+    {
+      title: "Adl",
+      subtitle: "Fairness Without Exception",
+      description: "We believe true elegance is rooted in equality. No budget is too small, no purchase too grand. Every guest is treated with the same warmth, respect, and attention."
+    },
+    {
+      title: "Sidq",
+      subtitle: "Honesty at Heart",
+      description: "Transparency is our promise. From pricing to customization, we believe in clear communication and sincere guidance. What you see is what you receive, with no hidden details."
+    },
+    {
+      title: "Noor",
+      subtitle: "Light in Every Experience",
+      description: "We want you to leave not just well dressed, but glowing. Noor represents the confidence and radiance you carry when you feel truly seen, understood, and celebrated."
+    },
   ];
 
   return (
@@ -34,15 +43,15 @@ const About = () => {
                 transition={{ duration: 0.8 }}
               >
                 <p className="font-accent text-sm tracking-[0.3em] text-primary mb-4">ABOUT US</p>
-                <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 leading-tight">
-                  A Legacy of
-                  <br />
-                  <span className="italic">Elegance</span>
+                <h1 className="font-display text-4xl md:text-5xl lg:text-5xl text-foreground mb-6 leading-tight uppercase">
+                  Ishq in every <br />
+                  <span className="italic">thread</span>
                 </h1>
+                <p className="font-body text-foreground text-lg mb-6 font-medium italic">
+                  Some days stay in your heart forever, the day you choose the perfect outfit and the day you wear it with pride as compliments pour in.
+                </p>
                 <p className="font-body text-muted-foreground leading-relaxed mb-8">
-                  Rumi by Manisha is more than a fashion brand—it's a celebration of India's rich textile heritage. 
-                  Founded by Manisha Kaushik in 2015, our journey began with a simple mission: to bring the 
-                  exquisite craftsmanship of Indian artisans to the global stage.
+                  At RUMI, we weave Ishq in Every Thread, love that transforms moments into memories. We add Noor to make you shine from within and Rooh to touch the soul of every celebration. Every experience is crafted to be personal, luxurious, and unforgettable, for brides, guests, and everyone who wishes to celebrate life beautifully.
                 </p>
                 <Button asChild variant="luxury" size="lg">
                   <Link to="/shop">Explore Collections</Link>
@@ -76,43 +85,44 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="max-w-3xl mx-auto text-center mb-16"
+              className="max-w-4xl mx-auto"
             >
-              <p className="font-accent text-sm tracking-[0.3em] text-primary mb-4">OUR STORY</p>
-              <h2 className="font-display text-4xl md:text-5xl text-foreground mb-8">
-                Where Tradition Meets Contemporary
-              </h2>
-              <p className="font-body text-muted-foreground leading-relaxed">
-                What started as a small atelier in Mumbai has grown into a beloved brand that connects 
-                discerning customers worldwide with the finest Indian ethnic wear. Each piece in our 
-                collection tells a story—of skilled hands that weave magic into fabric, of traditions 
-                passed down through generations, and of timeless beauty that transcends borders.
-              </p>
-            </motion.div>
+              <div className="text-center mb-16">
+                <p className="font-accent text-sm tracking-[0.3em] text-primary mb-4">OUR STORY</p>
+                <h2 className="font-display text-4xl md:text-5xl text-foreground mb-8 uppercase">
+                  Where it all <span className="italic">began</span>
+                </h2>
+              </div>
 
-            {/* Timeline */}
-            <div className="max-w-4xl mx-auto">
-              {milestones.map((milestone, index) => (
-                <motion.div
-                  key={milestone.year}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`flex items-center gap-8 mb-8 ${
-                    index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-                  }`}
-                >
-                  <div className={`flex-1 ${index % 2 === 0 ? "text-right" : "text-left"}`}>
-                    <span className="font-display text-3xl text-primary">{milestone.year}</span>
-                    <h3 className="font-display text-xl text-foreground mt-2">{milestone.title}</h3>
-                    <p className="font-body text-sm text-muted-foreground mt-1">{milestone.description}</p>
-                  </div>
-                  <div className="w-4 h-4 rounded-full bg-primary flex-shrink-0" />
-                  <div className="flex-1" />
-                </motion.div>
-              ))}
-            </div>
+              <div className="grid md:grid-cols-2 gap-12 items-start">
+                <div className="space-y-6 font-body text-muted-foreground leading-relaxed text-lg">
+                  <p>
+                    RUMI began in 2025, not in a grand storefront, but in the heart of my home in Mississauga,
+                    with a vision to create something more than just a shopping destination. I wanted to build
+                    a space where every woman feels seen, understood, and celebrated.
+                  </p>
+                  <p>
+                    While shopping for traditional wear myself, I often left feeling disappointed. There was
+                    little guidance, no thoughtful advice on what truly suited me, and rarely any opportunity
+                    for customization. The experience felt rushed and impersonal, when it should have felt special.
+                  </p>
+                </div>
+                <div className="space-y-6 font-body text-muted-foreground leading-relaxed text-lg">
+                  <p className="text-foreground font-medium italic">
+                    That is when I decided to create something different.
+                  </p>
+                  <p>
+                    At RUMI, we ensure you truly love the outfit you choose. Each piece is carefully altered
+                    to your perfect fit, and we offer personalized styling guidance to help you feel confident
+                    and radiant.
+                  </p>
+                  <p>
+                    Because for us, it is never just about an outfit. It is about honoring our South Asian roots,
+                    embracing individuality, and turning every occasion into a beautiful memory.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
 
@@ -138,10 +148,11 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-background p-8 text-center shadow-card hover:shadow-elegant transition-shadow duration-300"
+                  className="bg-background p-8 text-center shadow-card hover:shadow-elegant transition-all duration-300 border border-primary/5 hover:border-primary/20 group"
                 >
-                  <h3 className="font-display text-xl text-foreground mb-4">{value.title}</h3>
-                  <p className="font-body text-sm text-muted-foreground">{value.description}</p>
+                  <h3 className="font-display text-2xl text-primary mb-1 group-hover:scale-110 transition-transform">{value.title}</h3>
+                  <p className="font-accent text-[10px] tracking-widest text-muted-foreground mb-4 uppercase">{value.subtitle}</p>
+                  <p className="font-body text-sm text-muted-foreground leading-relaxed">{value.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -180,12 +191,10 @@ const About = () => {
                 <h3 className="font-display text-2xl text-foreground mb-2">Manisha Kaushik</h3>
                 <p className="font-accent text-primary mb-6">Founder & Creative Director</p>
                 <p className="font-body text-muted-foreground leading-relaxed mb-4">
-                  With a background in fashion design from NIFT and over 15 years of experience 
-                  in the textile industry, Manisha brings both expertise and passion to every collection.
+                  Manisha believes that every piece of clothing should be more than just an outfit—it should be an experience of love. What started in the heart of her home in Mississauga has grown into a mission to bring soulful, high-quality ethnic wear to women who value individuality and tradition.
                 </p>
                 <p className="font-body text-muted-foreground leading-relaxed">
-                  "My vision has always been to create pieces that make every woman feel like royalty, 
-                  while ensuring our artisans receive the recognition and support they deserve."
+                  "At RUMI, we don't just sell clothes. We ensure you feel confident and radiant, honoring our roots while embracing who you are today."
                 </p>
               </div>
             </motion.div>

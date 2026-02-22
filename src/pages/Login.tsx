@@ -87,7 +87,7 @@ const Login = () => {
                 <h1 className="font-display text-2xl md:text-3xl font-medium tracking-wide text-foreground">
                   RUMI
                 </h1>
-                <p className="font-accent text-xs md:text-sm tracking-[0.3em] text-muted-foreground">
+                <p className="font-accent text-sm md:text-base tracking-[0.3em] text-foreground/90">
                   by Manisha
                 </p>
               </Link>
@@ -202,7 +202,7 @@ const Login = () => {
                         value={registerData.phone}
                         onChange={(e) => setRegisterData({ ...registerData, phone: e.target.value })}
                         className="bg-transparent"
-                        placeholder="+91 123 456 7890"
+                        placeholder="+1 (647) 410-2840"
                       />
                       <p className="font-body text-xs text-muted-foreground mt-1">
                         Indian numbers will see prices in ₹ (INR)
