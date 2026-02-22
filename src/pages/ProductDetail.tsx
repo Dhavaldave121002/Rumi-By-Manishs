@@ -217,7 +217,8 @@ const ProductDetail = () => {
   return (
     <>
       <Header />
-      <main className="pt-24 min-h-screen bg-background">
+      <main className="min-h-screen bg-background">
+        <div className="pt-24 md:pt-32"></div>
         {/* Breadcrumb */}
         <nav className="py-3 md:py-4 bg-secondary/30">
           <div className="container mx-auto px-6 md:px-4">

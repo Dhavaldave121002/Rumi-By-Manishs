@@ -32,9 +32,9 @@ const About = () => {
   return (
     <>
       <Header />
-      <main className="pt-24 min-h-screen bg-background">
+      <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="relative py-24 bg-secondary/30 overflow-hidden">
+        <section className="relative pt-32 md:pt-48 pb-12 md:pb-24 bg-secondary/30 overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <motion.div

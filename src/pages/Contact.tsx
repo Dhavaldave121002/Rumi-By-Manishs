@@ -191,9 +191,9 @@ const Contact = () => {
   return (
     <>
       <Header />
-      <main className="pt-24 min-h-screen bg-background">
+      <main className="min-h-screen bg-background">
         {/* Hero */}
-        <section className="py-20 md:py-32 bg-secondary/30 relative overflow-hidden">
+        <section className="pt-32 md:pt-48 pb-12 md:pb-24 bg-secondary/30 relative overflow-hidden">
           <div className="container mx-auto px-4 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
