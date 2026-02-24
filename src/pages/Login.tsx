@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
+import FloatingContactButton from "@/components/FloatingContactButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -300,6 +302,8 @@ const Login = () => {
         </div>
       </main>
       <Footer />
+      <BackToTop />
+      <FloatingContactButton />
     </>
   );
 };

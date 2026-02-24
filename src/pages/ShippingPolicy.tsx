@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
+import FloatingContactButton from "@/components/FloatingContactButton";
 import { Truck, Clock, Globe, Package, RefreshCw, Shield } from "lucide-react";
 
 const ShippingPolicy = () => {
@@ -161,6 +163,8 @@ const ShippingPolicy = () => {
         </section>
       </main>
       <Footer />
+      <BackToTop />
+      <FloatingContactButton />
     </>
   );
 };

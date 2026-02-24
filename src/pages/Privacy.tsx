@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
+import FloatingContactButton from "@/components/FloatingContactButton";
 
 const Privacy = () => {
   return (
@@ -16,7 +18,7 @@ const Privacy = () => {
               transition={{ duration: 0.6 }}
             >
               <p className="font-accent text-sm tracking-[0.3em] text-primary mb-4">LEGAL</p>
-              <h1 className="font-display text-4xl md:text-5xl text-foreground">Privacy Policy</h1>
+              <h1 className="font-display text-4xl md:text-5xl text-foreground uppercase">Privacy Policy</h1>
               <p className="font-body text-muted-foreground mt-4">Last updated: January 2024</p>
             </motion.div>
           </div>
@@ -176,6 +178,8 @@ const Privacy = () => {
         </section>
       </main>
       <Footer />
+      <BackToTop />
+      <FloatingContactButton />
     </>
   );
 };

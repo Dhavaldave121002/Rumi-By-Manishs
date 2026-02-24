@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
+import FloatingContactButton from "@/components/FloatingContactButton";
 
 const Terms = () => {
   return (
@@ -164,6 +166,8 @@ const Terms = () => {
         </section>
       </main>
       <Footer />
+      <BackToTop />
+      <FloatingContactButton />
     </>
   );
 };

@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
+import FloatingContactButton from "@/components/FloatingContactButton";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -202,6 +204,8 @@ const About = () => {
         </section>
       </main>
       <Footer />
+      <BackToTop />
+      <FloatingContactButton />
     </>
   );
 };
