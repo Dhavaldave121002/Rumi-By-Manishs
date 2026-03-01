@@ -24,7 +24,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[60vh] md:h-[85vh] lg:h-screen overflow-hidden bg-black">
+    <section className="relative w-full h-[60vh] md:h-[85vh] lg:h-screen overflow-hidden bg-background">
       <div className="relative w-full h-full">
         <AnimatePresence initial={false} mode="wait">
           <motion.div
@@ -42,7 +42,7 @@ const HeroSection = () => {
               className="w-full h-full bg-cover bg-center bg-no-repeat transition-all duration-1000"
               style={{ backgroundImage: `url(${banners[currentIndex].image})` }}
             >
-              <div className="absolute inset-0 bg-black/10" />
+              <div className="absolute inset-0 bg-secondary/10 backdrop-blur-[1px]" />
             </motion.div>
           </motion.div>
         </AnimatePresence>

@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className="bg-background text-foreground pb-safe-bottom border-t border-primary/10">
       {/* Newsletter Section */}
-      <div className="border-b border-primary/10">
+      <div className="bg-background border-b border-primary/10">
         <div className="container mx-auto px-6 md:px-4 py-10 md:py-12 lg:py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -22,7 +22,7 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             className="max-w-2xl mx-auto text-center"
           >
-            <h3 className="font-display text-2xl md:text-2xl lg:text-3xl mb-4">Join Our World</h3>
+            <h3 className="font-display text-2xl md:text-4xl text-primary mb-4 uppercase tracking-[2px]">Join Our World</h3>
             <p className="font-body text-muted-foreground mb-6 md:mb-8 text-sm md:text-sm tracking-wide leading-relaxed">
               Subscribe to receive exclusive offers, early access to new collections, and curated style inspiration.
             </p>

@@ -44,7 +44,7 @@ const ProductsManagement = () => {
             setError(null);
             const response = await api.products.getAll({ limit: 100 });
             if (response.success && response.data) {
-                setProducts(response.data);
+                setProducts(response.data as Product[]);
             } else {
                 throw new Error('Failed to fetch products');
             }

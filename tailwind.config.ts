@@ -15,9 +15,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Playfair Display', 'Georgia', 'serif'],
-        accent: ['Cormorant Garamond', 'Georgia', 'serif'],
-        body: ['Montserrat', '-apple-system', 'sans-serif'],
+        display: ['Cinzel', 'serif'],
+        accent: ['Playfair Display', 'Cormorant Garamond', 'serif'],
+        body: ['Montserrat', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -59,7 +59,7 @@ const FeaturedProducts = () => {
       // Try to fetch featured products from database
       const response = await api.products.getFeatured(8);
 
-      if (response.success && response.data && response.data.length > 0) {
+      if (response.success && Array.isArray(response.data) && response.data.length > 0) {
         // Map database products to component format
         const mappedProducts = response.data.map((p: any) => ({
           id: String(p.id),
@@ -88,7 +88,7 @@ const FeaturedProducts = () => {
   };
 
   return (
-    <section className="py-24 bg-secondary/30">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -97,8 +97,10 @@ const FeaturedProducts = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="font-accent text-sm tracking-[0.3em] text-primary mb-4">CURATED FOR YOU</p>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground">New Arrivals</h2>
+          <h2 className="font-display text-4xl md:text-6xl text-primary mb-3 uppercase tracking-[2px]">New Arrivals</h2>
+          <p className="font-accent text-lg md:text-2xl text-foreground/80 italic leading-relaxed">
+            Curated pieces for your timeless style
+          </p>
         </motion.div>
 
         {loading ? (

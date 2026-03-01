@@ -54,18 +54,8 @@ const CategorySection = () => {
 
           setCollections(mapped);
         } else {
-          // If empty, we might want to show nothing or fallback. 
-          // For now, fallback to static if absolutely nothing exists, 
-          // but if user created 1 collection, we should probably just show that 1.
-          // If the user says "uploaded all... but not show", maybe api returned empty? 
-          // But we will start with null and only fallback if API fails or returns explicitly empty.
-          if (res.success && res.data?.length === 0) {
-            // Determine if we should show 'No collections' or static. 
-            // Usually static is for demo.
-            setCollections(staticCollections);
-          } else {
-            setCollections(staticCollections);
-          }
+          // If empty, fail, or no data, fallback to static defaults
+          setCollections(staticCollections);
         }
       } catch (error) {
         console.error("Failed to load collections", error);
@@ -79,7 +69,7 @@ const CategorySection = () => {
   const displayCollections = collections.length > 0 ? collections : staticCollections;
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-secondary overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -88,8 +78,12 @@ const CategorySection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="font-accent text-sm tracking-[0.3em] text-primary mb-4">EXPLORE</p>
-          <h2 className="font-display text-4xl md:text-5xl text-foreground">Our Collections</h2>
+          <h2 className="font-display text-4xl md:text-6xl text-primary mb-3 uppercase tracking-[2px]">
+            OUR CURATED COLLECTIONS
+          </h2>
+          <p className="font-accent text-lg md:text-2xl text-foreground/80 italic leading-relaxed">
+            Handpicked styles for every occasion
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

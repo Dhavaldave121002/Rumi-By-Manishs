@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const BrandStory = () => {
   return (
-    <section className="py-24 bg-background overflow-hidden">
+    <section className="py-24 bg-secondary overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image Side */}
@@ -35,12 +35,14 @@ const BrandStory = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="font-accent text-sm tracking-[0.3em] text-primary mb-4">OUR STORY</p>
-            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-8 leading-tight uppercase">
+            <h2 className="font-display text-4xl md:text-6xl text-primary mb-3 uppercase tracking-[2px] leading-tight">
               Ishq in every
               <br />
               <span className="italic">thread</span>
             </h2>
+            <p className="font-accent text-lg md:text-2xl text-foreground/80 mb-8 italic">
+              Our journey from Mississauga home to your heart
+            </p>
             <div className="space-y-6 text-muted-foreground font-body leading-relaxed text-lg italic">
               <p>
                 "What began in the heart of my home in Mississauga has grown into a space where every woman is celebrated. At RUMI, we weave Ishq in Every Thread, love that transforms moments into memories."

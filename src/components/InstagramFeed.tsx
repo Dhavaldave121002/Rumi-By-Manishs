@@ -22,7 +22,6 @@ const InstagramFeed = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <p className="font-accent text-sm tracking-[0.3em] text-primary mb-4">FOLLOW US</p>
           <motion.a
             href="https://instagram.com/rumibymanisha"
             target="_blank"
@@ -30,9 +29,9 @@ const InstagramFeed = () => {
             whileHover={{ scale: 1.05 }}
             className="inline-block"
           >
-            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4 hover:text-primary transition-colors">@rumibymanisha</h2>
+            <h2 className="font-display text-4xl md:text-6xl text-primary mb-3 uppercase tracking-[2px] transition-colors">@rumibymanisha</h2>
           </motion.a>
-          <p className="font-body text-muted-foreground">Join our community for daily inspiration</p>
+          <p className="font-accent text-lg md:text-2xl text-foreground/80 italic leading-relaxed">Join our community for daily inspiration</p>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">

@@ -224,7 +224,7 @@ const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
           >
             <div className="container mx-auto px-4 py-6 md:py-8">
               <div className="flex justify-between items-center mb-6 md:mb-8">
-                <h2 className="font-display text-xl md:text-2xl text-foreground">Search Collection</h2>
+                <h2 className="font-display text-2xl md:text-4xl text-primary uppercase tracking-[2px]">Search Collections</h2>
                 <button
                   onClick={onClose}
                   className="p-2 text-foreground hover:text-primary transition-colors"

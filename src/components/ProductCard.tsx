@@ -70,26 +70,26 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
               whileHover={{ scale: 1.08 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             />
-            
-            <motion.div 
+
+            <motion.div
               className="absolute inset-0 bg-gradient-to-t from-foreground/40 via-transparent to-transparent"
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             />
-            
+
             <div className="absolute top-4 left-4 flex flex-col gap-2">
               {product.isNew && (
-                <motion.span 
+                <motion.span
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
-                  className="px-3 py-1 bg-foreground text-background text-[10px] tracking-[0.2em] uppercase font-body"
+                  className="px-3 py-1 bg-accent text-accent-foreground text-[10px] tracking-[0.2em] uppercase font-body"
                 >
                   New
                 </motion.span>
               )}
               {product.isSale && (
-                <motion.span 
+                <motion.span
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: 0.1 }}
@@ -101,9 +101,8 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
             </div>
 
             <motion.button
-              className={`absolute top-4 right-4 w-10 h-10 bg-background/90 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-110 ${
-                isInWishlist(product.id) ? "bg-primary text-primary-foreground" : "opacity-0 group-hover:opacity-100"
-              }`}
+              className={`absolute top-4 right-4 w-10 h-10 bg-background/90 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-110 ${isInWishlist(product.id) ? "bg-primary text-primary-foreground" : "opacity-0 group-hover:opacity-100"
+                }`}
               onClick={handleAddToWishlist}
               aria-label="Add to wishlist"
               whileHover={{ scale: 1.15 }}
@@ -112,7 +111,7 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
               <Heart className={`w-4 h-4 ${isInWishlist(product.id) ? "fill-current" : ""}`} />
             </motion.button>
 
-            <motion.div 
+            <motion.div
               className="absolute bottom-4 left-4 right-4"
               initial={{ y: 20, opacity: 0 }}
               whileHover={{ y: 0, opacity: 1 }}
@@ -130,18 +129,18 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
             </motion.div>
           </div>
 
-          <motion.div 
+          <motion.div
             className="text-center"
             whileHover={{ y: -4 }}
             transition={{ duration: 0.2 }}
           >
-            <p className="font-body text-[11px] tracking-[0.15em] uppercase text-muted-foreground mb-1">
+            <p className="font-accent italic text-[14px] tracking-[0.1em] text-primary mb-1">
               {product.category}
             </p>
-            <h3 className="font-display text-lg text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+            <h3 className="font-display text-xl md:text-2xl text-foreground mb-2 group-hover:text-primary transition-colors duration-300 uppercase tracking-wider">
               {product.name}
             </h3>
-            
+
             {/* Rating Display */}
             {product.rating && (
               <div className="flex items-center justify-center gap-1 mb-2">
@@ -149,11 +148,10 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className={`w-3 h-3 ${
-                        i < Math.floor(product.rating!)
-                          ? "fill-primary text-primary"
-                          : "text-muted-foreground/30"
-                      }`}
+                      className={`w-3 h-3 ${i < Math.floor(product.rating!)
+                        ? "fill-primary text-primary"
+                        : "text-muted-foreground/30"
+                        }`}
                     />
                   ))}
                 </div>
@@ -162,14 +160,14 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
                 </span>
               </div>
             )}
-            
+
             <div className="flex items-center justify-center gap-2">
               {product.originalPrice && (
-                <span className="font-body text-sm text-muted-foreground line-through">
+                <span className="font-body text-sm text-muted-foreground line-through opacity-70">
                   {currencySymbol}{currency === "INR" ? (product.originalPrice * 60).toLocaleString() : product.originalPrice}
                 </span>
               )}
-              <span className="font-body text-sm text-foreground font-medium">
+              <span className="font-body text-base text-foreground font-semibold tracking-wide">
                 {currencySymbol}{displayPrice.toLocaleString()}
               </span>
             </div>
